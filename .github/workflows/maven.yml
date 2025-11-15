@@ -44,9 +44,7 @@ jobs:
           echo "IMAGE=$IMAGE" >> $GITHUB_ENV
           docker build -t $IMAGE .
 
-      - name: Push Docker image
-        run: |
-          docker push $IMAGE
-
       - name: Output image URL
-        run: echo "Pushed image: $IMAGE"
+        run: |
+          echo "Pushed image: $IMAGE"
+
