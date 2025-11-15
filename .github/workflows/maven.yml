@@ -58,4 +58,18 @@ jobs:
       - name: Output image URLs
         run: |
           echo "Pushed image: $IMAGE"
+          
+
+      - name: Deploy to Cloud Run
+        run: |
+          gcloud run deploy simple-web-server \
+            --image "$IMAGE" \
+            --region us-central1 \
+            --platform managed \
+            --allow-unauthenticated \
+            --quiet
+            
+      - name: Cloud Run URL
+        run: |
+          echo "Deployed URL: https://simple-web-server-352535210260.us-central1.run.app"
 
