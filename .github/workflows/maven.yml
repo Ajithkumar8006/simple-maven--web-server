@@ -37,9 +37,8 @@ jobs:
         uses: google-github-actions/auth@v2
         with:
           token_format: access_token
-          workload_identity_provider: $WORK_LOAD_IDENTITY
-          service_account: $SERVICE_ACCOUNT
-
+          workload_identity_provider: ${{ secrets.WORK_LOAD_IDENTITY }}
+          service_account: ${{ secrets.SERVICE_ACCOUNT }}
 
       - name: Configure Docker for Artifact Registry
         run: |
