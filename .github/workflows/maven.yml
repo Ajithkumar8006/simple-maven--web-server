@@ -44,13 +44,17 @@ jobs:
       - name: Configure Docker for Artifact Registry
         run: |
           gcloud auth configure-docker REGION-docker.pkg.dev
-
+          
       - name: Build Docker image
         run: |
-          IMAGE="REGION-docker.pkg.dev/PROJECT_ID/REPOSITORY/simple-web-server:${{ github.sha }}"
+          IMAGE="us-central1-docker.pkg.dev/apigee-12092025/containers/simple-web-server:${GITHUB_SHA}"
           echo "IMAGE=$IMAGE" >> $GITHUB_ENV
-          docker build -t $IMAGE .
-
+          docker build -t "$IMAGE" .
+      
+      - name: Push Docker image
+        run: |
+          docker push "$IMAGE"
+      
       - name: Output image URLs
         run: |
           echo "Pushed image: $IMAGE"
