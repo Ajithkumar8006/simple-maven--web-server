@@ -37,8 +37,9 @@ jobs:
         uses: google-github-actions/auth@v2
         with:
           token_format: access_token
-          workload_identity_provider: projects/352535210260/locations/global/workloadIdentityPools/github-maven-pool/providers/github-maven-provider
+          workload_identity_provider: projects/352535210260/locations/global/workloadIdentityPools/github-pool-2/providers/github-provider-2
           service_account: github-actions@apigee-12092025.iam.gserviceaccount.com
+
 
       - name: Configure Docker for Artifact Registry
         run: |
