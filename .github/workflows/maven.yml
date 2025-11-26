@@ -1,4 +1,4 @@
-
+#projects/68865704160/locations/global/workloadIdentityPools/github-pool2/providers/github-provider2
 name: Build and Push to Artifact Registry
 
 on:
