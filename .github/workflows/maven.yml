@@ -1,4 +1,4 @@
-#projects/68865704160/locations/global/workloadIdentityPools
+#projects/68865704160/locations
 name: Build and Push to Artifact Registry
 
 on:
