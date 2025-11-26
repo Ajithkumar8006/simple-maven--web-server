@@ -39,7 +39,7 @@ jobs:
           
       - name: Build Docker image
         run: |
-          IMAGE="us-central1-docker.pkg.dev/apigee-12092025/containers/simple-web-server:${GITHUB_SHA}"
+          IMAGE="us-central1-docker.pkg.dev/ajith-8006/apigee-12092025/simple-web-server:${GITHUB_SHA}"
           echo "IMAGE=$IMAGE" >> $GITHUB_ENV
           docker build -t "$IMAGE" .
       
